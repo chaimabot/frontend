@@ -1,3 +1,11 @@
+/* Additional CSS for circular image */
+.circle-img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
 .hero__content {
   padding-top: 70px;
 }
@@ -35,6 +43,7 @@
 .order__btn:hover {
   background: #212245;
 }
+
 .all__foods-btn {
   background: transparent;
   border: 1px solid #df2020 !important;
