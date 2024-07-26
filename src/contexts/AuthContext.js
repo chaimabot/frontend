@@ -4,6 +4,7 @@ import {
   register,
   forgotPassword,
   resetPassword,
+  uploadImage,
 } from "../services/apiService";
 
 const AuthContext = createContext({
@@ -12,6 +13,7 @@ const AuthContext = createContext({
   register: () => Promise,
   forgotPassword: () => Promise,
   resetPassword: () => Promise,
+  uploadImage: () => Promise,
   logout: () => Promise,
 });
 
@@ -20,7 +22,9 @@ export const useAuth = () => useContext(AuthContext);
 export default function AuthContextProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    // Optionally handle user session restoration
+  }, []);
 
   const handleLogin = async (email, password) => {
     try {
@@ -32,9 +36,9 @@ export default function AuthContextProvider({ children }) {
     }
   };
 
-  const handleRegister = async (email, password) => {
+  const handleRegister = async (userData) => {
     try {
-      const response = await register(email, password);
+      const response = await register(userData);
       setCurrentUser(response.data);
     } catch (error) {
       console.error("Registration error:", error.message);
@@ -61,7 +65,6 @@ export default function AuthContextProvider({ children }) {
   };
 
   const handleLogout = () => {
-    // Implement logout functionality if needed
     setCurrentUser(null);
   };
 

@@ -19,7 +19,6 @@ const Login = () => {
       .then((response) => {
         console.log(response);
         toast.success(`User Login`);
-        navigate("/Profile");
       })
       .catch((error) => {
         console.log(error.message);
