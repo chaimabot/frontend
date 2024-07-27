@@ -38,12 +38,6 @@ const Login = () => {
       });
   };
 
-  useEffect(() => {
-    if (currentUser) {
-      navigate("/profile");
-    }
-  });
-
   return (
     <Helmet title="Login">
       <CommonSection title="Login" />

@@ -12,3 +12,16 @@ export const forgotPassword = (email) =>
 
 export const resetPassword = (token, newPassword) =>
   axios.post(`${API_URL}/reset-password/${token}`, { newPassword });
+
+export const getProfile = async (userId, token) => {
+  return axios.get(`${API_URL}/${userId}`, {
+    headers: {
+      "x-auth-token": token,
+    },
+  });
+};
+export const updateProfile = (profileData, token) => {
+  return axios.put(`${API_URL}/profile`, profileData, {
+    headers: { "x-auth-token": token },
+  });
+};

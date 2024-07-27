@@ -13,6 +13,7 @@ import ForgotPasswordPage from "../pages/ForgotPasswordPage";
 import ResetPasswordPage from "../pages/ResetPasswordPage";
 import Service from "../pages/Service";
 import PageNotFound from "../pages/PageNotFound";
+import EditProfile from "../pages/editProfile";
 
 const Routers = () => {
 	return (
@@ -25,6 +26,7 @@ const Routers = () => {
 			<Route path="/checkout" element={<Checkout />} />
 			<Route path="/login" element={<Login />} />
 			<Route path="/service" element={<Service />} />
+			<Route path="/editProfile" element={<EditProfile />} />
 			<Route path="/register" element={<Register />} />
 			<Route path="*" element={<PageNotFound />} />
 			<Route path="/contact" element={<Contact />} />
